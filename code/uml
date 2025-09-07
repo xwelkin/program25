@@ -1,0 +1,53 @@
+@startuml
+abstract class Creature {
+  -hp: int
+  -attack: int
+  -defense: int
+  -prestige: int
+  -luck: int
+  -curhp: int
+  -curattack: int
+  -curdefense: int
+  -curluck: int
+  -item: Item
+  -money: int
+  -skills: vector[Skill]
+}
+class Skill{
+  +use(self:Creature, other:Creature): void
+}
+
+class Npc{
+  -name:String
+  +trade():void
+  +response(): void
+}
+
+class Player{
+
+}
+
+class Item{
+  +effect(): void
+}
+
+class Event{
+  -description:String
+  +left():void
+  +right():void
+}
+
+class Game{
+  -status:int
+  -curEvent:Event
+  +fight(Creature c1,Creature c2):void
+  +menu():void
+  +start():void
+}
+
+Creature <|-- Player
+Creature <|-- Npc
+Creature o--> "many" Skill : contains
+Creature o--> Item : contains
+Game o--> Event : contains
+@enduml

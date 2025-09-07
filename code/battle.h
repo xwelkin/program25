@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include "backpack.h"
 
 class Life;
 class Skill {
@@ -20,8 +21,12 @@ public:
     int attack;
     int defense;
     int luck;
+    int maxhp;
+    int maxattack;
+    int maxdefense;
+    int maxluck;
     std::vector<Skill> skills;
     Life(std::string n ,int h, int a, int d, int l, std::vector<Skill> &sks);
 };
 
-void fight(Life &l1, Life &l2);
+void fight(Life &l1, Life &l2,const Backpack& backpack);
