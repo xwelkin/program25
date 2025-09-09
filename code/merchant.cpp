@@ -8,9 +8,9 @@ void Merchant::addItem(const std::string& itemName, int price) {
 }
 
 void Merchant::displayInventory() const {
-    std::cout << "ÉÌÈË " << name << " µÄÉÌÆ·ÁĞ±í£º" << std::endl;
+    std::cout << "å•†äºº " << name << " çš„å•†å“åˆ—è¡¨ï¼š" << std::endl;
     for (const auto& item : inventory) {
-        std::cout << "- " << item.first << ": " << item.second << " ½ğ±Ò" << std::endl;
+        std::cout << "- " << item.first << ": " << item.second << " é‡‘å¸" << std::endl;
     }
 }
 
@@ -20,16 +20,16 @@ bool Merchant::purchaseItem(const std::string& itemName, int& playerGold, Backpa
             if (playerGold >= it->second) {
                 playerGold -= it->second;
                 inventory.erase(it);
-                Weapon newWeapon(itemName, "¹ºÂòµÄÎäÆ÷", 10, 10, 0, 0); // ¼ÙÉè¹ºÂòµÄÎïÆ·ÊÇÎäÆ÷
+                Weapon newWeapon(itemName, "è´­ä¹°çš„æ­¦å™¨", 10, 10, 0, 0); // å‡è®¾è´­ä¹°çš„ç‰©å“æ˜¯æ­¦å™¨
                 backpack.addWeapon(newWeapon);
-                std::cout << "³É¹¦¹ºÂòÁË [" << itemName << "]£¡" << std::endl;
+                std::cout << "æˆåŠŸè´­ä¹°äº† [" << itemName << "]ï¼" << std::endl;
                 return true;
             } else {
-                std::cout << "½ğ±Ò²»×ã£¬ÎŞ·¨¹ºÂò [" << itemName << "]£¡" << std::endl;
+                std::cout << "é‡‘å¸ä¸è¶³ï¼Œæ— æ³•è´­ä¹° [" << itemName << "]ï¼" << std::endl;
                 return false;
             }
         }
     }
-    std::cout << "ÉÌÆ· [" << itemName << "] ²»´æÔÚ£¡" << std::endl;
+    std::cout << "å•†å“ [" << itemName << "] ä¸å­˜åœ¨ï¼" << std::endl;
     return false;
 }

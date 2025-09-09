@@ -7,18 +7,19 @@
 class Merchant {
 private:
     std::string name;
-    std::vector<std::pair<std::string, int>> inventory; // ÉÌÆ·Ãû³ÆºÍ¼Û¸ñ
+    std::vector<std::pair<std::string, int>> inventory; // å•†å“åç§°å’Œä»·æ ¼
+
 
 public:
-    // ¹¹Ôìº¯Êı
+    // æ„é€ å‡½æ•°
     Merchant(std::string n);
 
-    // Ìí¼ÓÉÌÆ·
+    //  æ·»åŠ å•†å“
     void addItem(const std::string& itemName, int price);
 
-    // ÏÔÊ¾ÉÌÆ·ÁĞ±í
+    //æ˜¾ç¤ºå•†å“åˆ—è¡¨
     void displayInventory() const;
 
-    // ¹ºÂòÉÌÆ·
+    // è´­ä¹°å•†å“
     bool purchaseItem(const std::string& itemName, int& playerGold, Backpack& backpack);
 };

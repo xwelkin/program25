@@ -6,38 +6,38 @@ Enemy::Enemy(std::string n, int h, int a, int d, int l, std::vector<Skill>& sks)
     : Life(n, h, a, d, l, sks) {}
 
 int Enemy::attack(Life& target) {
-    // Ëæ»úÑ¡Ôñ¼¼ÄÜ
+    // éšæœºé€‰æ‹©æŠ€èƒ½
     int skillIndex = getRandom(skills.size());
     int damage = skills[skillIndex].use(*this, target);
-    std::cout << name << " Ê¹ÓÃ¼¼ÄÜ [" << skills[skillIndex].name << "] ¶Ô " << target.name
-              << " Ôì³ÉÁË " << damage << " µãÉËº¦£¡" << std::endl;
+    std::cout << name << " Ê¹ï¿½Ã¼ï¿½ï¿½ï¿½ [" << skills[skillIndex].name << "] ï¿½ï¿½ " << target.name
+              << " ï¿½ï¿½ï¿½ï¿½ï¿½ " << damage << " ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½" << std::endl;
     return damage;
 }
 
 
 
-//Ôİ¶¨´´Ôì½ÇÉ«£¬¼¼ÄÜ´ı¶¨Òå
+//æš‚å®šåˆ›é€ è§’è‰²ï¼ŒæŠ€èƒ½å¾…å®šä¹‰
 Enemy createEnemyKarthus() {
-    std::vector<Skill> skills = {sk1}; // ¼ÙÉè¼¼ÄÜ sk1 ÒÑ¶¨ÒåÎªÆÕÍ¨¹¥»÷
-    return Enemy("¿¨ÍĞ", 200, 50, 100, 0, skills);
+    std::vector<Skill> skills = {sk1}; //  å‡è®¾æŠ€èƒ½ sk1 å·²å®šä¹‰ä¸ºæ™®é€šæ”»å‡»
+    return Enemy("ï¿½ï¿½ï¿½ï¿½", 200, 50, 100, 0, skills);
 }
 
 Enemy createEnemyLion() {
-    std::vector<Skill> skills = {sk1, sk2}; // ¼ÙÉè¼¼ÄÜ sk2 Îª "Ë»ºğ"
-    return Enemy("Ê¨ÊŞ", 400, 70, 40, 0, skills);
+    std::vector<Skill> skills = {sk1, sk2}; // å‡è®¾æŠ€èƒ½ sk2 ä¸º "å˜¶å¼"
+    return Enemy("Ê¨ï¿½ï¿½", 400, 70, 40, 0, skills);
 }
 
 Enemy createEnemyRomanWarrior() {
-    std::vector<Skill> skills = {sk1, sk3, sk4}; // ¼ÙÉè¼¼ÄÜ sk3 Îª "·ÀÓù"£¬sk4 Îª "Í»»÷"
-    return Enemy("ÂŞÂí½Ç¶·Ê¿", 500, 80, 100, 0, skills);
+    std::vector<Skill> skills = {sk1, sk3, sk4}; // å‡è®¾æŠ€èƒ½ sk3 ä¸º "é˜²å¾¡"ï¼Œsk4 ä¸º "çªå‡»"
+    return Enemy("ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½Ê¿", 500, 80, 100, 0, skills);
 }
 
 Enemy createEnemyLionKing() {
-    std::vector<Skill> skills = {sk1, sk5, sk6}; // ¼ÙÉè¼¼ÄÜ sk5 Îª "¾ø¶Ô·ÀÓù"£¬sk6 Îª "ÄæÊÆ¹¥»÷"
-    return Enemy("ÑÇÀïµÂ¶û", 800, 100, 100, 0, skills);
+    std::vector<Skill> skills = {sk1, sk5, sk6}; //  å‡è®¾æŠ€èƒ½ sk5 ä¸º "ç»å¯¹é˜²å¾¡"ï¼Œsk6 ä¸º "é€†åŠ¿æ”»å‡»"
+    return Enemy("ï¿½ï¿½ï¿½ï¿½Â¶ï¿½", 800, 100, 100, 0, skills);
 }
 
 Enemy createEnemyLionKingSearch() {
-    std::vector<Skill> skills = {sk1, sk7, sk8}; // ¼ÙÉè¼¼ÄÜ sk7 Îª "ÕğÉåÒâÖ¾"£¬sk8 Îª "ÈıÔÂÒ»Õ¶"
-    return Enemy("Ê¨ğÕÅµË÷", 1000, 120, 120, 0, skills);
+    std::vector<Skill> skills = {sk1, sk7, sk8}; //å‡è®¾æŠ€èƒ½ sk7 ä¸º "éœ‡æ…‘æ„å¿—"ï¼Œsk8 ä¸º "ä¸‰æœˆä¸€æ–©"
+    return Enemy("Ê¨ï¿½ï¿½Åµï¿½ï¿½", 1000, 120, 120, 0, skills);
 }

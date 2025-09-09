@@ -3,9 +3,9 @@
 
 class Enemy : public Life {
 public:
-    // ¹¹Ôìº¯Êı£¬Ö±½Óµ÷ÓÃ Life µÄ¹¹Ôìº¯Êı
+    // æ„é€ å‡½æ•°ï¼Œç›´æ¥è°ƒç”¨ Life çš„æ„é€ å‡½æ•°
     Enemy(std::string n, int h, int a, int d, int l, std::vector<Skill>& sks);
 
-    // µĞÈËĞĞÎª£ºËæ»úÑ¡Ôñ¼¼ÄÜ¹¥»÷
+    // æ•Œäººè¡Œä¸ºï¼šéšæœºé€‰æ‹©æŠ€èƒ½æ”»å‡»
     int attack(Life& target);
 };
