@@ -28,5 +28,5 @@ public:
     std::vector<Skill> skills;
     Life(std::string n ,int h, int a, int d, int l, std::vector<Skill> &sks);
 };
-
+int getRandom(int n);
 void fight(Life &l1, Life &l2,const Backpack& backpack);
